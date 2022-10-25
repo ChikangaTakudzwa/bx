@@ -5,4 +5,4 @@ def index(requests):
     context = {
         "title" : "Home | Brandxperts"
     }
-    return render(request, "index.html", context)
+    return render(request, "base.html", context)
