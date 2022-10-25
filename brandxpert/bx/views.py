@@ -1,8 +1,15 @@
 from django.shortcuts import render
 
 # Create your views here.
-def index(requests):
+def index(request):
     context = {
-        "title" : "Home | Brandxperts"
+        "title" : "Home | Brandxperts",
+        "GIT" : "Get in touch with bx today!"
     }
-    return render(requests, "index/index.html", context)
+    return render(request, "index/index.html", context)
+
+def services(request):
+    context = {
+        "title" : "Services | Brandxperts"
+    }
+    return render(request, "services/services.html", context)
