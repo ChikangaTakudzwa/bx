@@ -10,6 +10,21 @@ def index(request):
 
 def services(request):
     context = {
-        "title" : "Services | Brandxperts"
+        "title" : "Services | Brandxperts",
+        "header_name" : "Our Services"
     }
     return render(request, "services/services.html", context)
+
+def about(request):
+    context = {
+        "title" : "About | Brandxperts",
+        "header_name" : "About us"
+    }
+    return render(request, "about/about.html", context)
+
+def contact(request):
+    context = {
+        "title" : "Contact | Brandxperts",
+        "header_name" : "Contact us"
+    }
+    return render(request, "contact/contact.html", context)
