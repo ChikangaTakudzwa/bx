@@ -4,7 +4,7 @@ NAVBAR
 --------------------------------------->
 <nav class="topnav navbar navbar-expand-lg navbar-dark bg-primary fixed-top shadow">
     <div class="container-fluid">
-        <a class="navbar-brand" href="./index.html"><img src="/assets/img/index/bx_logo_ico.png" /></a>
+        <a class="navbar-brand" href="{% url 'index' %}"><strong>Brand</strong>Xperts</a>
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
@@ -26,8 +26,7 @@ NAVBAR
             <ul class="navbar-nav ml-auto d-flex align-items-center">
                 <li class="nav-item">
                 <span class="nav-link" href="#">
-                <a class="btn btn-bx-o btn-round shadow" href="#contactus" data-toggle="modal" data-target="#modal_newsletter">Get Quote <a href="" class="downloadzip" class="hidden"></a>
-                </a>
+                <a class="btn btn-bx-o btn-round shadow" href="#contactus">Get Quote</a>
                 </span>
                 </li>
             </ul>
