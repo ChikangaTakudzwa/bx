@@ -8,11 +8,10 @@ sudo add-apt-repository -y ppa:deadsnakes/ppa
 
 echo "Installing Python 3.8 and Virtual Environment"
 sudo apt-get update
-sudo DEBIAN_FRONTEND=noninteractive apt-get install -y python3.8.13
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -y python3.8 python3.8-venv
 
-echo "Making Python 3.8 the default..."
-sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.10 1
-sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.8.13 2
+echo "Creating a Python virtual environment"
+python3.8 -m venv .bxenv
 
 echo "Checking the Python version..."
 python3 --version

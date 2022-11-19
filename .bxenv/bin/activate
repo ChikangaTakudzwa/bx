@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/workspace/bx/.bxenv"
+VIRTUAL_ENV="/workspaces/bx/.bxenv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
