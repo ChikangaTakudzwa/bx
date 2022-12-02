@@ -27,5 +27,5 @@ jobs:
         pip install -r brandxpert/requirements.txt
     - name: Run Tests
       run: |
-        cd brandxpert
-        python manage.py test
+        pytest
+        
