@@ -10,17 +10,20 @@ def test_home(client):
     resp = client.get(url)
     assert resp.status_code == 200
 
+
 def test_services(client):
     """ Test for services page """
     url = reverse("services")
     resp = client.get(url)
     assert resp.status_code == 200
 
+
 def test_contact(client):
     """ Test for contact """
     url = reverse("contact")
     resp = client.get(url)
     assert resp.status_code == 200
+
 
 def test_about(client):
     """ Test for about page """
