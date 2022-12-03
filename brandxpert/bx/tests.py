@@ -1,6 +1,7 @@
 import pytest
 from django.urls import reverse
 
+
 # Create your tests here.
 @pytest.mark.django_db
 def test_home(client):
@@ -26,4 +27,3 @@ def test_about(client):
     url = reverse("about")
     resp = client.get(url)
     assert resp.status_code == 200
-
