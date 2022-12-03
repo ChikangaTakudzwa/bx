@@ -1,5 +1,6 @@
 from django.shortcuts import render
 
+
 # Create your views here.
 def index(request):
     context = {
@@ -8,12 +9,14 @@ def index(request):
     }
     return render(request, "index/index.html", context)
 
+
 def services(request):
     context = {
         "title": "Services | Brandxperts",
         "header_name": "Our Services"
     }
     return render(request, "services/services.html", context)
+
 
 def about(request):
     context = {
