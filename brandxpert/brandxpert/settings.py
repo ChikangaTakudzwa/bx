@@ -132,4 +132,4 @@ STATICFILES_FINDERS = [
 ]
 
 # Django Sass
-SASS_PROCESSOR_ROOT = os.path.join(BASE_DIR,'bx/static/css')
+SASS_PROCESSOR_ROOT = os.path.join(BASE_DIR, 'bx/static/css')
