@@ -19,10 +19,10 @@ repos:
       - id: prettier
         files: \.(js|ts|jsx|tsx|css|less|html|json|markdown|md|yaml|yml)$
 
-  - repo: https://github.com/PyCQA/pylint
-    rev: v2.12.2
-    hooks:
-      - id: pylint
+  # - repo: https://github.com/PyCQA/pylint
+  #   rev: v2.12.2
+  #   hooks:
+  #     - id: pylint
 
   - repo: https://github.com/sirosen/check-jsonschema
     rev: 0.10.0
@@ -30,7 +30,7 @@ repos:
       - id: check-github-actions
       - id: check-github-workflows
 
-  - repo: https://github.com/psf/black
-    rev: 21.12b0
-    hooks:
-      - id: black
+  # - repo: https://github.com/psf/black
+  #   rev: 21.12b0
+  #   hooks:
+  #     - id: black
