@@ -22,8 +22,8 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('bx/', include('bx.urls')),
-    path('', RedirectView.as_view(url='bx/', permanent=True)),
+    path('brandxpert/', include('bx.urls')),
+    path('', RedirectView.as_view(url='brandxpert/', permanent=True)),
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += staticfiles_urlpatterns()

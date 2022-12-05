@@ -382,6 +382,17 @@ a {
   @include fill-variant(".bg-#{$color}", $value);
 }
 
+//Parallax
+
+// .parallax-one {
+//   background-image: url('img/index/Facebook_cover.jpg');
+//   height: 100%;
+//   background-attachment: fixed;
+//   background-position: center;
+//   background-repeat: no-repeat;
+//   background-size: cover;
+// }
+
 // Cards
 .card {
     .date {

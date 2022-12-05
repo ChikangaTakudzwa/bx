@@ -1,11 +1,8 @@
-{% extends "base.html" %}
-
-    {% block index %}
-    <!-- Including from templates folder and passing to the block -->
-        {% include 'index/include/header.html' %}
-        {% include 'index/include/home_services.html' %}
-        {% include 'index/include/full_img.html' %}
-        {% include 'index/include/faq.html' %}
-        {% include 'index/include/cards.html' %}
-        {% include 'index/include/cta.html' %}
-    {% endblock %}
+{% extends "base.html" %} {% block index %}
+<!-- Including from templates folder and passing to the block -->
+{% include 'index/include/header.html' %} {% include
+'index/include/home_services.html' %} {% include
+'index/include/parallax_one.html' %} {% include 'index/include/cards.html' %} {%
+include 'index/include/parallax_two.html' %} {% include 'index/include/faq.html'
+%} {% include 'index/include/parallax_three.html' %} {% include
+'index/include/cta.html' %} {% endblock %}
