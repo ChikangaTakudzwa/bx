@@ -17,7 +17,7 @@ repos:
     rev: v2.5.1
     hooks:
       - id: prettier
-        files: \.(js|ts|jsx|tsx|css|less|html|json|markdown|md|yaml|yml)$
+        files: \.(js|ts|jsx|tsx|css|less|json|markdown|md|yaml|yml)$
 
   # - repo: https://github.com/PyCQA/pylint
   #   rev: v2.12.2
