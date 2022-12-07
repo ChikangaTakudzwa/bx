@@ -133,3 +133,10 @@ STATICFILES_FINDERS = [
 
 # Django Sass
 SASS_PROCESSOR_ROOT = os.path.join(BASE_DIR, 'bx/static/css')
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = "youngpainzw@gmail.com"
+EMAIL_HOST_PASSWORD = 'chikangatakud'
+EMAIL_PORT = '587'
