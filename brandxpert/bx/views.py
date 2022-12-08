@@ -1,5 +1,8 @@
 from django.shortcuts import render
+from django.http import HttpResponseRedirect
 from django.core.mail import BadHeaderError, send_mail
+from django.conf import settings
+from .forms import write
 
 # Create your views here.
 def index(request):
@@ -36,30 +39,26 @@ def contact(request):
 
 def write_form(request):
     """ Get from data and send email """
-    fname = request.POST.get('name', '')
-    lname = request.POST.get('lname', '')
-    number = request.POST.get('number', '')
-    #concatenate fname, lname and number to a variable to used as mail subject
-    mail_subject = fname + " " + lname + " " + number
-    #assing mail subject to subject variable
-    subject = mail_subject
-    message = request.POST.get('message', '')
-    from_email = request.POST.get('email', '')
-    if subject and message and from_email:
-        try:
-            send_mail(subject, message, from_email, ['youngpainzw@gmail.com'])
-        except BadHeaderError:
-            bad_header_context = {
-                "error": "Error sending email, try again!"
-            }
-            return render(request, "contact/contact.html", bad_header_context)
-        sent_context = {
-            "200OK": "Email Sent"
-        }
-        return render(request, "contact/contact.html", sent_context)
+    # if this is a POST request we need to process the form data
+    if request.method == 'POST':
+        form = write(request.POST)
+        if form.is_valid():
+            subject = "Website User Inquiry"
+            body = {
+			    'info': form.cleaned_data['info'],
+			    'email': form.cleaned_data['email'],
+			    'message':form.cleaned_data['message'],
+			}
+            message = "\n".join(body.values())
+            sender = settings.EMAIL_HOST_USER
+            receiver = [settings.EMAIL_HOST_USER]
+            try:
+                send_mail(subject, message, sender, receiver)
+            except BadHeaderError:
+                context = { "notification": "Error try again"}
+                return render(request, "contact/contact.html", context)
+            context = { "notification": "Thank you for your message"}
+            return render(request, "contact/contact.html", context)
     else:
-        # render error notification
-        error_context = {
-            "400": "Make sure all fields are entered and valid"
-        }
-        return render(request, "contact/contact.html", error_context)
+        form = write()
+        return render(request, "contact/contact.html")

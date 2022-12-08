@@ -1,5 +1,6 @@
 import pytest
 from django.urls import reverse
+from django.core import mail
 
 
 # Create your tests here.
@@ -30,3 +31,15 @@ def test_about(client):
     url = reverse("about")
     resp = client.get(url)
     assert resp.status_code == 200
+
+
+# def test_email_send(client):
+#     """ Test for sending emails """
+#     mail.send_mail(
+#         'Takudzwa Chikanga 771034920',
+#         'Wasuup',
+#         'tornado@bx.com',
+#         ['dreamchaser@bx.com'],
+#         fail_silently=False,
+#     )
+#     assert len(mail.outbox)
