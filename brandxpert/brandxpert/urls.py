@@ -20,10 +20,11 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
+# url paths for the project
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('brandxpert/', include('bx.urls')),
-    path('', RedirectView.as_view(url='brandxpert/', permanent=True)),
+    path('', RedirectView.as_view(url='brandxpert/', permanent=True)),  # redirect view of landing page to brandxpert/
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += staticfiles_urlpatterns()
