@@ -72,6 +72,6 @@ def write_form(request):
             context = {"notification": "Thank you for your message"}
             return render(request, "contact/contact.html", context)
     else:
-        #else if not a POST method return empty form back to the user
+        # else if not a POST method return empty form back to the user
         form = write()
         return render(request, "contact/contact.html")
