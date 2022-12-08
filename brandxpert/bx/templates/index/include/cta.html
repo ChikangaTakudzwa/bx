@@ -10,14 +10,9 @@ CTA
 		</p>
 		{% endblock %}
 	</div>
-	<form class="row justify-content-center">
-		<div class="col-md-3 p-3">
-			<input type="text" class="form-control input-round w-100 form-control-lg" placeholder="First name*">
-		</div>
-		<div class="col-md-3 p-3">
-			<input type="text" class="form-control input-round w-100 form-control-lg" placeholder="E-mail address*">
-		</div>
-		<div class="col-md-3 p-3">
+	<form method="" action="{% url 'contact' %}" class="row justify-content-center">
+		{% csrf_token %}
+		<div class="col-sm-12 col-md-12 col-lg-3 p-3">
 			<button type="submit" class="btn btn-bx btn-round btn-lg w-100">Contact us</button>
 		</div>
 	</form>

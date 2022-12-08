@@ -7,27 +7,19 @@ Write us
     <h3 class="h3 fw-bold lh-1 text-center">Write us</h3>
     <p class="text-muted">Directly contact us for assistance</p>
   </div>
-    <form class="row justify-content-center needs-validation" novalidate>
+    <form method="POST" action="{% url 'write' %}" class="row justify-content-center needs-validation" novalidate>
+        {% csrf_token %}
         <div class="col-sm-12 col-md-6 p-3">
-            <input type="text" class="form-control input-round w-100 form-control-md" placeholder="First name*" required>
-            <div class="valid-feedback">
+            <input type="text" id= "info" name="info" class="form-control input-round w-100 form-control-md" placeholder="Subject*" required>
+            <div class="ml-3 valid-feedback">
                 Looks good!
             </div>
-            <div class="invalid-feedback">
-                Please enter name.
+            <div class="ml-3 invalid-feedback">
+                Please valid input.
             </div>
         </div>
         <div class="col-sm-12 col-md-6 p-3">
-            <input type="text" class="form-control input-round w-100 form-control-md" placeholder="Last name*" required>
-            <div class="valid-feedback">
-                Looks good!
-            </div>
-            <div class="invalid-feedback">
-                Please enter last name.
-            </div>
-        </div>
-        <div class="col-sm-12 col-md-6 p-3">
-            <input type="email" class="form-control input-round w-100 form-control-md" placeholder="E-mail address*" required>
+            <input type="email" id= "email" name="email" class="form-control input-round w-100 form-control-md" placeholder="E-mail address*" required>
             <div class="valid-feedback">
                 Looks good!
             </div>
@@ -35,17 +27,8 @@ Write us
                 Please enter email address.
             </div>
         </div>
-        <div class="col-sm-12 col-md-6 p-3">
-            <input type="text" class="form-control input-round w-100 form-control-md" placeholder="Phone number*" required>
-            <div class="valid-feedback">
-                Looks good!
-            </div>
-            <div class="invalid-feedback">
-                Please enter phone number.
-            </div>
-        </div>
         <div class="col-12 p-3">
-            <textarea class="form-control input-round w-100 form-control-md" placeholder="Message...*" rows="3" required></textarea>
+            <textarea name="message" id= "message" class="form-control input-round w-100 form-control-md" placeholder="Message...*" rows="3" required></textarea>
             <div class="valid-feedback">
                 Looks good!
             </div>
@@ -56,6 +39,12 @@ Write us
         <div class="col-12 p-3">
             <button type="submit" class="btn btn-bx btn-round btn-md w-100">Send</button>
         </div>
+        <!-- Alert-->
+        {% block notification %}
+        <div class="alert mt-3 p-0 text-center" role="alert">
+            {{notification}}
+        </div>
+        {% endblock %}
     </form>
 
 </div>
