@@ -5,28 +5,23 @@
 // 1- Import bootstrap framework
 @import '1-frameworks/index';
 
-// 2 - Import plugins
-@import '2-plugins/index';
-
-// 3 - Import base style, custom variables and mixins
-@import '3-base/index';
-
-// 4 - Import modules
-@import '4-modules/index';
-
-// 5 - Import layout  styles
-@import '5-layout/index';
-
 $bx-color : #01348D;
 $bx-color-hover : #00225E;
 $bx-color-focus : #00225E;
 //====================================
 // Additional theme classes
 //====================================
+.back-to-top {
+  position: sticky;
+  bottom: 25px;
+  right: 25px;
+  // display: none;
+}
 
 // General
 body {
     overflow-x: hidden;
+    overflow-y: scroll;
     font-size:15px;
 }
 

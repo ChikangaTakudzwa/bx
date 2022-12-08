@@ -12237,9 +12237,15 @@ html {
     align-self: stretch !important;
   }
 }
-/* Custom Mixins -------------------- */ /* Base Styles -------------------- */
+.back-to-top {
+  position: sticky;
+  bottom: 25px;
+  right: 25px;
+}
+
 body {
   overflow-x: hidden;
+  overflow-y: scroll;
   font-size: 15px;
 }
 

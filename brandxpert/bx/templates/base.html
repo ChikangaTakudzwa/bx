@@ -70,9 +70,8 @@
   </head>
 
   <body>
+
     {% include 'nav.html' %}
-
-
     <!-- Index Block-->
     {% block index %} {% endblock %}
     <!-- Services Block-->
@@ -82,15 +81,10 @@
     <!-- Contact Block-->
     {% block contact %} {% endblock %}
 
-
     {% include 'footer.html' %}
     <!--------------------------------------
 JAVASCRIPTS
 --------------------------------------->
-    <!-- <script
-      async defer
-      src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
-    </script> -->
     <script
       src="{% static 'js/vendor/jquery.min.js' %}"
       type="text/javascript"
