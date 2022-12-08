@@ -1,8 +1,8 @@
 from django.shortcuts import render
-from django.http import HttpResponseRedirect
 from django.core.mail import BadHeaderError, send_mail
 from django.conf import settings
 from .forms import write
+
 
 # Create your views here.
 def index(request):
@@ -45,19 +45,19 @@ def write_form(request):
         if form.is_valid():
             subject = "Website User Inquiry"
             body = {
-			    'info': form.cleaned_data['info'],
-			    'email': form.cleaned_data['email'],
-			    'message':form.cleaned_data['message'],
-			}
+                'info': form.cleaned_data['info'],
+                'email': form.cleaned_data['email'],
+                'message': form.cleaned_data['message'],
+                }
             message = "\n".join(body.values())
             sender = settings.EMAIL_HOST_USER
             receiver = [settings.EMAIL_HOST_USER]
             try:
                 send_mail(subject, message, sender, receiver)
             except BadHeaderError:
-                context = { "notification": "Error try again"}
+                context = {"notification": "Error try again"}
                 return render(request, "contact/contact.html", context)
-            context = { "notification": "Thank you for your message"}
+            context = {"notification": "Thank you for your message"}
             return render(request, "contact/contact.html", context)
     else:
         form = write()

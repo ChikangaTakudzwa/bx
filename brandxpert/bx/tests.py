@@ -1,6 +1,6 @@
 import pytest
 from django.urls import reverse
-from django.core import mail
+# from django.core import mail
 
 
 # Create your tests here.
