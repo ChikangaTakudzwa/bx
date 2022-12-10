@@ -25,3 +25,12 @@ $(window).scroll(function () {
     $("#back-to-top").fadeOut();
   }
 });
+
+// $('#mymodal').on('show.bs.modal', function () {
+//   $.ajax({
+//       url: "{% url 'portfolio' %}",
+//       success: function (data) {
+//           // Handle the response from the view function
+//       }
+//   });
+// });

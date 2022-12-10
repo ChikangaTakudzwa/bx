@@ -28,6 +28,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+MEDIA_ROOT = ''
+MEDIA_URL = ''
 
 # Application definition
 
@@ -78,8 +80,12 @@ WSGI_APPLICATION = 'brandxpert.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'ChikangaTakudzwa/brandxpert',
+        'USER': 'ChikangaTakudzwa',
+        'PASSWORD': 'v2_3wchu_YSdDFEAZENdYUpXEDPDQBpr',
+        'HOST': 'db.bit.io',
+        'PORT': '5432',
     }
 }
 
