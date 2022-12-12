@@ -20,7 +20,7 @@ class Work(models.Model):
 class Motion(models.Model):
     """ Model for motion graphics """
     motion_name = models.CharField(max_length=50, help_text="Motion Name")
-    link = models.URLField(max_length=200, help_text="Source Link/Youtube Link")
+    motion_link = models.URLField(max_length=200, help_text="Source Link/Youtube Link")
     date_uploaded = models.DateField(default=datetime.now, blank=True, help_text="Date uploaded")
 
     def __str__(self):

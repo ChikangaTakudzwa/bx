@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
-import os, sys
+# import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -77,28 +77,16 @@ WSGI_APPLICATION = 'brandxpert.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
-
-TESTING = sys.argv[1:2] == ['test']
-if TESTING == False:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'ChikangaTakudzwa/brandxpert',
-            'USER': 'ChikangaTakudzwa',
-            'PASSWORD': 'v2_3wchu_YSdDFEAZENdYUpXEDPDQBpr',
-            'HOST': 'db.bit.io',
-            'PORT': '5432',
-        }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'ChikangaTakudzwa/brandxpert',
+        'USER': 'ChikangaTakudzwa',
+        'PASSWORD': 'v2_3wchu_YSdDFEAZENdYUpXEDPDQBpr',
+        'HOST': 'db.bit.io',
+        'PORT': '5432',
     }
-else:
-    DATABASES = {
-        'default': {
-        "ENGINE": "django.db.backends.sqlite3",
-        "TEST": {
-            "NAME": os.path.join(BASE_DIR, "test_db.sqlite3"),
-        }
-    }}
-
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
