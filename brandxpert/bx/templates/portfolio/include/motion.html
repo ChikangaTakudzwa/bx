@@ -11,9 +11,13 @@ LOGO ITEMS
   <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
     {% for item in motion %}
     <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+      <h5 class="h5 fw-bold lh-1 text-center">{{item.motion_name}}</h5>
+      <a href="{{item.motion_link}}">
         <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" src="{{item.link}}" allowfullscreen></iframe>
+            <iframe class="embed-responsive-item" src="{{item.motion_link}}" allowfullscreen></iframe>
         </div>
+        <p class="text-muted">{{item.motion_link}}</p>
+      </a>
     </div>
     {% endfor %}
   </div>

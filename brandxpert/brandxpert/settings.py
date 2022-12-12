@@ -80,9 +80,9 @@ WSGI_APPLICATION = 'brandxpert.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'ChikangaTakudzwa/brandxpert',
+        'NAME': 'ChikangaTakudzwa/bx',
         'USER': 'ChikangaTakudzwa',
-        'PASSWORD': 'v2_3wchu_YSdDFEAZENdYUpXEDPDQBpr',
+        'PASSWORD': 'v2_3wk2F_7jDnbQLWM9KtUzNt7jeqTb4',
         'HOST': 'db.bit.io',
         'PORT': '5432',
     }

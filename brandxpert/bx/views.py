@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.core.mail import BadHeaderError, send_mail
 from django.conf import settings
 from .forms import write
-from .models import Work, Motion
+from .models import WorksTable, MotionTable
 
 
 # Create your views here.
@@ -26,10 +26,10 @@ def services(request):
 
 def portfolio(request):
     """ Portfolio page """
-    logo_items = Work.objects.filter(file_name__startswith="logo")
-    graphics_items = Work.objects.filter(file_name__startswith="graphic")
-    info_items = Work.objects.filter(file_name__startswith="info")
-    motion_items = Motion.objects.all()
+    logo_items = WorksTable.objects.filter(file_name__startswith="logo")
+    graphics_items = WorksTable.objects.filter(file_name__startswith="graphic")
+    info_items = WorksTable.objects.filter(file_name__startswith="info")
+    motion_items = MotionTable.objects.all()
     context = {
         "title": "Portfolio | Brandxperts",
         "header_name": "Our Works",

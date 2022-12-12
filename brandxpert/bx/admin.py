@@ -1,7 +1,7 @@
 from django.contrib import admin
-from .models import Work, Motion
+from .models import WorksTable, MotionTable
 
 # Register your models here.
-admin.site.register(Work)
+admin.site.register(WorksTable)
 
-admin.site.register(Motion)
+admin.site.register(MotionTable)
