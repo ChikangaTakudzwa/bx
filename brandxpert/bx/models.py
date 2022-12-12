@@ -3,11 +3,12 @@ from datetime import datetime
 
 services = (("Logo", "logo"), ("Graphic Design", "graphics"), ("Info Graphics", "info"))
 
+
 # Create your models here.
 class Work(models.Model):
     """ Model for portfolio items """
     file_name = models.CharField(max_length=50, help_text="Name *name must start with logo_, graphic_ or info_")
-    image = models.ImageField(upload_to ='bx/media', help_text="Image")
+    image = models.ImageField(upload_to ='bx/media', help_text="Image") # noqa: E251
     service_type = models.CharField(max_length=50, choices=services, default=1, help_text="Service Type")
     date_uploaded = models.DateField(default=datetime.now, blank=True, help_text="Date uploaded")
 
