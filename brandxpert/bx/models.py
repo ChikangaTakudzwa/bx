@@ -21,6 +21,10 @@ class WorksTable(models.Model):
         """String for representing the Model object."""
         return str(self.file_name)
 
+    class Meta:
+        """ class meta for ordering objects in the admin and at retrieval."""
+        ordering = ["-date_uploaded"]
+
 
 class MotionTable(models.Model):
     """ Model for motion graphics """
@@ -32,3 +36,7 @@ class MotionTable(models.Model):
     def __str__(self):
         """String for representing the Model object."""
         return str(self.motion_name)
+
+    class Meta:
+        """ class meta for ordering objects in the admin and at retrieval."""
+        ordering = ["-date_uploaded"]
