@@ -1,10 +1,9 @@
-import pytest
+# import pytest
 from django.urls import reverse
 # from django.core import mail
 
 
 # Create your tests here.
-@pytest.mark.django_db
 def test_home(client):
     """ Test for home page """
     url = reverse("index")
@@ -31,6 +30,14 @@ def test_about(client):
     url = reverse("about")
     resp = client.get(url)
     assert resp.status_code == 200
+
+
+# @pytest.mark.django_db
+# def test_portfolio(client):
+#     """ Test for portfolio page """
+#     url = reverse("portfolio")
+#     resp = client.get(url)
+#     assert resp.statuc_code == 200
 
 
 # def test_email_send(client):

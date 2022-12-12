@@ -111,6 +111,7 @@ env.bak/
 venv.bak/
 bxenv/
 node_modules/
+media/
 
 # Spyder project settings
 .spyderproject
