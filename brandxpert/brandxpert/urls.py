@@ -19,13 +19,16 @@ from django.views.generic import RedirectView
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from . import error
 
 # url paths for the project
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('brandxpert/', include('bx.urls')),
     path('', RedirectView.as_view(url='brandxpert/', permanent=True)),  # redirect view of landing page to brandxpert/
+    path('404/', error.page_not_found_view, name="404"),
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += staticfiles_urlpatterns()
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# handler404 = "brandxpert.error.page_not_found_view"
