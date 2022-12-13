@@ -35,9 +35,11 @@ jobs:
           echo "Fetch and install latest doppler cli"
           sudo apt-get update && sudo apt-get install -y doppler
           echo "Prevent configure command being leaked in bash history"
-          export HISTIGNORE='export DOPPLER_TOKEN*'
+          export HISTIGNORE='doppler*'
           echo "Scope to location of application directory"
-          export DOPPLER_TOKEN='dp.st.dev.2UC5DcQaF3t7c4A1ZC6GrBq3SKv9NttPW8OFwqfqydK'
+          echo 'dp.st.dev.2UC5DcQaF3t7c4A1ZC6GrBq3SKv9NttPW8OFwqfqydK' | doppler configure set token --scope /home/runner/work/bx/bx
+          echo "Supply secrets to your application"
+          cd /home/runner/work/bx/bx
       - name: Run Tests
         run: |
           doppler run -- pytest -v --cov && coverage report -m
