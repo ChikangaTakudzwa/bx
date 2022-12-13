@@ -157,3 +157,5 @@ EMAIL_PORT = env('EMAIL_PORT')
 
 CSRF_COOKIE_DOMAIN = None
 CSRF_TRUSTED_ORIGINS = env.list('CSRF_TRUSTED_ORIGINS')
+
+handler404 = "brandxpert.error.page_not_found_view"

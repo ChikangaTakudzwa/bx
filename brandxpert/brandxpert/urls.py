@@ -31,4 +31,4 @@ urlpatterns = [
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += staticfiles_urlpatterns()
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-# handler404 = "brandxpert.error.page_not_found_view"
+handler404 = "brandxpert.error.page_not_found_view"
