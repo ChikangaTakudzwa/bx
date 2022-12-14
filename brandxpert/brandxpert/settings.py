@@ -35,11 +35,7 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-hosts = env('ALLOWED_HOSTS')
-
-host = json.loads(hosts)
-
-ALLOWED_HOSTS = host
+ALLOWED_HOSTS = json.loads(env('ALLOWED_HOSTS'))
 
 MEDIA_ROOT = ''
 MEDIA_URL = ''
