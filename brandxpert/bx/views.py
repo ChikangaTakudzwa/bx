@@ -15,7 +15,7 @@ def index(request):
     return render(request, "index/index.html", context)
 
 
-def services(request):
+def services(request, **param):
     """ Services page """
     context = {
         "title": "Services | Brandxperts",
