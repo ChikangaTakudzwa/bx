@@ -1,3 +1,5 @@
 # build_files.sh
+python -m venv bxenv
+source bxenv/bin/activate
 pip install -r requirements.txt
-python3.8 manage.py collectstatic
+python manage.py collectstatic
