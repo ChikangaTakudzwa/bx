@@ -1,0 +1,8 @@
+version: "3.2"
+services:
+  bx:
+    build: .
+    image: bx:2
+    command: doppler run -t DOPPLER_TOKEN=$TKN python manage.py runserver 0.0.0.0:8000
+    ports:
+      - "8000:8000"
