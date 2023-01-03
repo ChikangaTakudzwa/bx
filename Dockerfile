@@ -20,9 +20,14 @@ COPY secrets.sh /brand
 RUN chmod +x /brand/secrets.sh
 
 # run doppler configure
-RUN doppler configure -t TKN
-COPY path.sh /brand
-RUN chmod +x /brand/path.sh && path.sh
+# RUN doppler configure -t TKN
+
+# RUN doppler login -y
+
+# RUN doppler -t $TKN setup
+
+# COPY path.sh /brand
+# RUN chmod +x /brand/path.sh && path.sh
 ENV DOPPLER_ENV=1
 
 # copy project files
@@ -36,4 +41,4 @@ EXPOSE 8000
 # RUN ls -la
 # entrypoint
 # ENTRYPOINT ["python3"]
-CMD ["gunicorn", "brandxpert.wsgi:application", "-b", "0.0.0.0:8000"]
+CMD ["gunicorn", "--bind=0.0.0.0:8000", "--log-level=info", "brandxpert.wsgi"]
