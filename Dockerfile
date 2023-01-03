@@ -15,7 +15,7 @@ RUN (curl -Ls --tlsv1.2 --proto "=https" --retry 3 https://cli.doppler.com/insta
 ENV TKN="dp.st.dev.Zb7EWffOo6jiutnGYZ6gbdWVzxDJO5du6z6k6TqdGf1"
 RUN doppler configure -t TKN
 # copy project files
-COPY /brandxpert/* .
+COPY /brandxpert/* ./
 # copy secrets fetch script
 COPY secrets.sh .
 RUN chmod +x /secrets.sh
