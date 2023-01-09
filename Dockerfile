@@ -16,6 +16,8 @@ RUN pip install --no-cache-dir -r requirements.txt && \
  apk add --no-cache curl && \
  apk add --no-cache gnupg
 
+RUN pip install gunicorn
+
 # Install Doppler CLI
 RUN wget -q -t3 'https://packages.doppler.com/public/cli/rsa.8004D9FF50437357.key' -O /etc/apk/keys/cli@doppler-8004D9FF50437357.rsa.pub && \
     echo 'https://packages.doppler.com/public/cli/alpine/any-version/main' | tee -a /etc/apk/repositories && \
@@ -30,5 +32,7 @@ USER bxuser
 
 # expose port
 EXPOSE 8000
+
+ENV PATH=$PATH:/usr/local/bin
 
 CMD ["doppler", "run", "gunicorn", "--bind=0.0.0.0:8000", "--log-level=info", "brandxpert.wsgi"]
