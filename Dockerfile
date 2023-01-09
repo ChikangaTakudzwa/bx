@@ -19,9 +19,9 @@ RUN pip install --no-cache-dir -r requirements.txt && \
 RUN pip install gunicorn
 
 # Install Doppler CLI
-RUN wget -q -t3 'https://packages.doppler.com/public/cli/rsa.8004D9FF50437357.key' -O /etc/apk/keys/cli@doppler-8004D9FF50437357.rsa.pub && \
-    echo 'https://packages.doppler.com/public/cli/alpine/any-version/main' | tee -a /etc/apk/repositories && \
-    apk add doppler
+# RUN wget -q -t3 'https://packages.doppler.com/public/cli/rsa.8004D9FF50437357.key' -O /etc/apk/keys/cli@doppler-8004D9FF50437357.rsa.pub && \
+#     echo 'https://packages.doppler.com/public/cli/alpine/any-version/main' | tee -a /etc/apk/repositories && \
+#     apk add doppler
 
 # copy project files
 COPY /brandxpert/ /brand/
@@ -35,4 +35,4 @@ EXPOSE 8000
 
 ENV PATH=$PATH:/usr/local/bin
 
-CMD ["doppler", "run", "gunicorn", "--bind=0.0.0.0:8000", "--log-level=info", "brandxpert.wsgi"]
+CMD ["gunicorn", "--bind=0.0.0.0:8000", "--log-level=info", "brandxpert.wsgi"]
