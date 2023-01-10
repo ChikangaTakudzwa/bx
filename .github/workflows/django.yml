@@ -7,7 +7,7 @@ on:
     branches: ["main"]
 
 env:
-  TOKEN: ${{ secrets.DOPPLER_TOKEN }}
+  TOKEN: ${{ secrets.PERSONAL_TOKEN }}
 
 jobs:
   build:
