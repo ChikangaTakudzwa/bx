@@ -2,22 +2,6 @@
 apiVersion: tekton.dev/v1beta1
 kind: Task
 metadata:
-  name: echo
-spec:
-  description: This task will echo the message.
-  params:
-    - name: message
-      description: The message to echo
-      type: string
-  steps:
-    - name: echo-message
-      image: alpine:3
-      command: [/bin/echo]
-      args: ["$(params.message)"]
----
-apiVersion: tekton.dev/v1beta1
-kind: Task
-metadata:
   name: cleanup
 spec:
   description: This task will clean up a workspace by deleting all of the files.
@@ -56,7 +40,7 @@ kind: Task
 metadata:
   name: pytest
 spec:
-  description: This task will run nosetests on the provided input.
+  description: This task will run pytest on the provided input.
   workspaces:
     - name: source
   params:
