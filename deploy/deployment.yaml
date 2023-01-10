@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: bx
+  name: bx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bx
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: bx
+    spec:
+      containers:
+        - image: docker.io/takudzwachikanga/bx:v1
+          imagePullPolicy: Always
+          name: bx
+          envFrom:
+            - secretRef:
+                name: doppler-token
+          resources: {}
+status: {}
