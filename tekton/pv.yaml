@@ -9,3 +9,4 @@ spec:
     - ReadWriteMany
   persistentVolumeReclaimPolicy: Retain
   storageClassName: ibmc-block-silver
+  volumeType: file
