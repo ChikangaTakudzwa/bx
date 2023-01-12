@@ -3,4 +3,10 @@ kind: StorageClass
 metadata:
   name: bx-storage-class
 provisioner: kubernetes.io/aws-ebs
+parameters:
+  type: gp2
 reclaimPolicy: Retain
+allowVolumeExpansion: true
+mountOptions:
+  - debug
+volumeBindingMode: Immediate
