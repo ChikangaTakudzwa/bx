@@ -9,4 +9,3 @@ spec:
     - ReadWriteMany
   persistentVolumeReclaimPolicy: Retain
   storageClassName: bx-storage-class
-  provisioner: kubernetes.io/aws-ebs
