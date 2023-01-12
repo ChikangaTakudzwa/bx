@@ -9,3 +9,4 @@ spec:
     - ReadWriteMany
   persistentVolumeReclaimPolicy: Retain
   storageClassName: bx-storage-class
+  storageType: block
