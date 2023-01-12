@@ -7,7 +7,7 @@ spec:
     name: bx-pipeline
   workspaces:
   - name: bx-workspace
-    claimName: bx-pvc
+    pvcName: bx-pvc
   params:
   - name: repo-url
     value: "https://github.com/ChikangaTakudzwa/bx.git"
