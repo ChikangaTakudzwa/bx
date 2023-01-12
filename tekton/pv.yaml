@@ -3,10 +3,10 @@ kind: PersistentVolume
 metadata:
   name: bx-pv
 spec:
+  storageClassName: local-storage
   capacity:
     storage: 1Gi
   accessModes:
-    - ReadWriteMany
-  persistentVolumeReclaimPolicy: Retain
-  storageClassName: ibmc-block-silver
-  volumeType: block
+    - ReadWriteOnce
+  hostPath:
+    path: /mnt/data

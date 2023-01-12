@@ -3,10 +3,9 @@ kind: PersistentVolumeClaim
 metadata:
   name: bx-pvc
 spec:
-  storageClassName: bx-storage-class
+  storageClassName: local-storage
+  accessModes:
+    - ReadWriteOnce
   resources:
     requests:
-      storage:  1Gi
-  volumeMode: Filesystem
-  accessModes:
-    - ReadWriteMany
+      storage: 1Gi
