@@ -8,5 +8,4 @@ spec:
   accessModes:
     - ReadWriteMany
   persistentVolumeReclaimPolicy: Retain
-  storageClassName: bx-storage-class
-  storageType: block
+  storageClassName: ibmc-block-silver
