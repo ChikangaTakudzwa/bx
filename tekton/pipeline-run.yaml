@@ -1,0 +1,14 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  name: bx-pipeline-run
+spec:
+  pipelineRef:
+    name: bx-pipeline
+  params:
+  - name: repo-url
+    value: "https://github.com/ChikangaTakudzwa/bx.git"
+  - name: branch
+    value: "cd"
+  - name: build-image
+    value: ""
