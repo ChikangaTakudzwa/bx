@@ -21,8 +21,12 @@ spec:
         - image: docker.io/takudzwachikanga/bx:v1
           imagePullPolicy: Always
           name: bx
-          envFrom:
-            - secretRef:
-                name: doppler-token
           resources: {}
+          volumeMounts:
+          - name: bx-data
+            mountPath: /mnt/data
+      volumes:
+      - name: bx-data
+        persistentVolumeClaim:
+          claimName: bx-pvc
 status: {}
