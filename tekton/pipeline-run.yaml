@@ -5,6 +5,9 @@ metadata:
 spec:
   pipelineRef:
     name: bx-pipeline
+  workspaces:
+  - name: bx-workspace
+    claimName: bx-pvc
   params:
   - name: repo-url
     value: "https://github.com/ChikangaTakudzwa/bx.git"
