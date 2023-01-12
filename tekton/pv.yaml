@@ -6,7 +6,15 @@ spec:
   capacity:
     storage: 1Gi
   accessModes:
-    - ReadWriteMany
-  persistentVolumeReclaimPolicy: Retain
-  storageClassName: bx-storage-class
-  storageType: block
+    - ReadWriteOnce
+  ibm:
+    csi:
+      driver: ibm.io/ibmc-block-csi
+  volumeClaimTemplates:
+    - metadata:
+        name: bx-pvc
+      spec:
+        accessModes: [ "ReadWriteOnce" ]
+        resources:
+          requests:
+            storage: 1Gi

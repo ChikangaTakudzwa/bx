@@ -6,7 +6,7 @@ spec:
   storageClassName: bx-storage-class
   resources:
     requests:
-      storage:  500Mi
+      storage:  1Gi
   volumeMode: Filesystem
   accessModes:
     - ReadWriteMany
