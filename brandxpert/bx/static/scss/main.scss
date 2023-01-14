@@ -11,6 +11,21 @@ $bx-color-focus : #00225E;
 //====================================
 // Additional theme classes
 //====================================
+
+.grad {
+  background: rgb(2,0,36);
+  background: -moz-linear-gradient(58deg, rgba(2,0,36,1) 0%, rgba(1,52,141,1) 50%, rgba(2,0,36,1) 100%);
+  background: -webkit-linear-gradient(58deg, rgba(2,0,36,1) 0%, rgba(1,52,141,1) 50%, rgba(2,0,36,1) 100%);
+  background: linear-gradient(58deg, rgba(2,0,36,1) 0%, rgba(1,52,141,1) 50%, rgba(2,0,36,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024",endColorstr="#020024",GradientType=1);
+}
+
+.txt-grad {
+  background: -webkit-linear-gradient(150deg, rgba(255,255,255,1) 0%, rgba(189,202,223,1) 63%, rgba(3,51,134,1) 91%, rgba(2,0,36,1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .back-to-top {
   position: sticky;
   bottom: 25px;
@@ -419,7 +434,6 @@ a {
         }
     a:hover {text-decoration:none; color: $primary;}
 }
-
 .card-pricing .card ul li {
     margin-bottom:1.5rem;
 }
