@@ -20,6 +20,7 @@ env:
   API_ENDPOINT: https://c108.eu-de.containers.cloud.ibm.com:30407
   ICR_NAMESPACE: chikanga
   REGISTRY_HOSTNAME: us.icr.io
+  RG: capstone-re
   IMAGE_NAME: bx-web
   IKS_CLUSTER: tk-cluster
   DEPLOYMENT_NAME: bx-web-deploy
@@ -48,7 +49,7 @@ jobs:
     - name: Authenticate with IBM Cloud CLI
       run: |
         ibmcloud api https://cloud.ibm.com
-        ibmcloud login --apikey "${IBM_CLOUD_API_KEY}" -r "${IBM_CLOUD_REGION}" -g default
+        ibmcloud login --apikey "${IBM_CLOUD_API_KEY}" -r "${IBM_CLOUD_REGION}" -g "${RG}"
         ibmcloud cr region-set "${IBM_CLOUD_REGION}"
         ibmcloud cr login
 
