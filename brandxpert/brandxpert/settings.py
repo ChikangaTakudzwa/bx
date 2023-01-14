@@ -32,7 +32,7 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [".vercel.app", ".now.sh", "tornadozw.pythonanywhere.com", "localhost", ".gitpod.io", ".openshiftapps.com"]
+ALLOWED_HOSTS = [".vercel.app", ".now.sh", "tornadozw.pythonanywhere.com", "localhost", ".gitpod.io", ".openshiftapps.com", "159.122.187.209"]
 
 MEDIA_ROOT = ''
 MEDIA_URL = ''
