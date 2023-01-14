@@ -59,7 +59,7 @@ jobs:
       run: |
         ibmcloud ks cluster config --cluster $IKS_CLUSTER
         kubectl config current-context
-        kubectl create deployment $DEPLOYMENT_NAME --image=$DOCKER_HUB --image-pull-policy=Always --dry-run=client -o yaml > deployment.yaml
+        kubectl create deployment $DEPLOYMENT_NAME --image=$DOCKER_HUB --dry-run=client -o yaml > deployment.yaml
         kubectl apply -f deployment.yaml
         kubectl rollout status deployment/$DEPLOYMENT_NAME
         kubectl create service nodeport $DEPLOYMENT_NAME --tcp=80:$PORT --dry-run=client -o yaml > service.yaml
